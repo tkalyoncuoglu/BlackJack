@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BlackJack;
-
-namespace BJconsole
+﻿namespace BlackJack.Console
 { 
     class Program
     {
         static void PrintCard(Card card)
         {
-            Console.WriteLine("Your Card: " + card.GetCaption() + " and it's value: " + card.GetValue());
+            System.Console.WriteLine("Your Card: " + card.GetCaption() + " and it's value: " + card.GetValue());
         }
 
         static void Main(string[] args)  
@@ -29,7 +22,7 @@ namespace BJconsole
             {
                 deck.Shuffle(11 + i);
 
-                Console.WriteLine("Play deck of " + deck.CardCount() + " cards:");
+                System.Console.WriteLine("Play deck of " + deck.CardCount() + " cards:");
 
                 while (deck.HasCards())
                 {
@@ -37,10 +30,10 @@ namespace BJconsole
                     PrintCard(card);
                 }
 
-                Console.WriteLine("--- // ---");
-                Console.WriteLine("Well done!");
+                System.Console.WriteLine("--- // ---");
+                System.Console.WriteLine("Well done!");
             }
-            Console.ReadKey();
+            System.Console.ReadKey();
         } 
     }
 }
