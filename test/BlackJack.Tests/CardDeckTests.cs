@@ -38,11 +38,8 @@ namespace BlackJack.Tests
     public class CardDeckTests
     {
         public IEnumerable<Card> GetCards(List<int> lst) =>
-            lst.Select(i => new Card
-            {
-                Number = i,
-                Color = CardColor.Spades
-            });
+            lst.Select(i => new Card(i, Card.CardColor.Spades)
+            );
 
         public int GetHandScore(IEnumerable<Card> cards)
         {

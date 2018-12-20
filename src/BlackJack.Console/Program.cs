@@ -2,21 +2,15 @@
 { 
     class Program
     {
-        static void PrintCard(Card card)
-        {
-            System.Console.WriteLine("Your Card: " + card.GetCaption() + " and it's value: " + card.GetValue());
-        }
+       
 
         static void Main(string[] args)  
         {
             var deck = new CardDeck();
 
-            var card = new Card();
-            card.Number = Card.GetPictureNumber(CardPicture.K);
-            // card.Number = 10;
-            card.Color = CardColor.Spades;
+            var card = new Card(Card.CardPicture.K, Card.CardColor.Spades);
 
-            PrintCard(card);
+            card.Print();
 
             for (int i = 0; i < 3; i++)
             {
@@ -27,7 +21,7 @@
                 while (deck.HasCards())
                 {
                     card = deck.PickCard();
-                    PrintCard(card);
+                    card.Print();
                 }
 
                 System.Console.WriteLine("--- // ---");
